@@ -15,6 +15,11 @@ class SpectreOpenaiJob
       openai: { max_tokens: 60 }
     )
 
-    puts result[:content]
+    Turbo::StreamsChannel.broadcast_append_to(
+      "chat",
+      target:  "messages",
+      partial: "chats/chat",
+      locals:  { user_prompt: result[:content] }
+    )
   end
 end

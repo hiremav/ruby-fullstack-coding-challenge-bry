@@ -21,17 +21,16 @@ class ChatsController < ApplicationController
 
   # POST /chats or /chats.json
   def create
-    @chat = Chat.new(chat_params)
+    user_prompt = params.require(:user_prompt)
 
-    respond_to do |format|
-      if @chat.save
-        format.html { redirect_to @chat, notice: "Chat was successfully created." }
-        format.json { render :show, status: :created, location: @chat }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @chat.errors, status: :unprocessable_entity }
-      end
-    end
+    Turbo::StreamsChannel.broadcast_append_to(
+      "chat",
+      target:  "messages",
+      partial: "chats/chat",
+      locals:  { user_prompt: user_prompt }
+    )
+
+    SpectreOpenaiJob.perform_async(user_prompt)
   end
 
   # PATCH/PUT /chats/1 or /chats/1.json

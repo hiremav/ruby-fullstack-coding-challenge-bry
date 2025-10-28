@@ -4,12 +4,4 @@ class ApplicationController < ActionController::Base
 
   # Changes to the importmap will invalidate the etag for HTML responses
   stale_when_importmap_changes
-
-  before_action :ensure_conversation_id
-
-  private
-
-  def ensure_conversation_id
-    session[:conversation_id] ||= SecureRandom.uuid
-  end
 end

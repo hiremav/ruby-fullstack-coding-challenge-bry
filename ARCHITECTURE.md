@@ -2,6 +2,10 @@
 
 Web chat interface to chatGPT
 
+
+## Application
+Visit http://0.0.0.0:3000/chats for the web chat interface to chatGPT
+
 # System Design
 
 ## Chat Interface System Sequence Diagram
@@ -70,9 +74,11 @@ cp .env.example .env
 
 # Future Work
 
-- Add a new llm queue for llm sidekiq jobs and configure priority
 - Add SpectreOpenAIJob error handling
-- Add Roadauth user authentication and user table, tie chats to user
+- Add Roadauth user authentication and user table, tie chats to user sessions
 - Add chat session tab feature with new data table modeling (chat, questions, responses)
 - Add Tailwind for nice UI layout
 - Cleanup `rails generate scaffold chat` files
+- Add sidekiq worker tests and chat controller tests
+- Update system sequence diagrams (include all turbo-stream calls)
+- Add persistence table design for users, questions and answers session

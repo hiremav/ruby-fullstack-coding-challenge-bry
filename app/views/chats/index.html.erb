@@ -2,15 +2,15 @@
 
 <% content_for :title, "Chats" %>
 
-<h1>Chats</h1>
+<h1>OpenAI Chat Interface</h1>
 
-<div id="chats">
-  <% @chats.each do |chat| %>
-    <%= render chat %>
-    <p>
-      <%= link_to "Show this chat", chat %>
-    </p>
-  <% end %>
+<%= turbo_stream_from "chat" %>
+
+<div id="messages" class="space-y-2">
+  <!-- messages will append here -->
 </div>
 
-<%= link_to "New chat", new_chat_path %>
+<%= form_with url: chats_path do |f| %>
+  <%= f.text_area :user_prompt, rows: 2, placeholder: "What's on your mind?" %>
+  <%= f.submit "Send" %>
+<% end %>
