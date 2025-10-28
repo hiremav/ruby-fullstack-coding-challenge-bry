@@ -55,6 +55,7 @@ The chat interface uses Ruby Spectre gem to interface with the OpenAI foundation
 # Future Work
 
 - Add a new llm queue for llm sidekiq jobs and configure priority
+- Add SpectreOpenAIJob error handling
 - Add Roadauth user authentication and user table, tie chats to user
 - Add chat session tab feature with new data table modeling (chat, questions, responses)
 - Add Tailwind for nice UI layout
