@@ -57,3 +57,4 @@ The chat interface uses Ruby Spectre gem to interface with the OpenAI foundation
 - Add Roadauth user authentication and user table, tie chats to user
 - Add chat session tab feature with new data table modeling (chat, questions, responses)
 - Add Tailwind for nice UI layout
+- Cleanup `rails generate scaffold chat` files
