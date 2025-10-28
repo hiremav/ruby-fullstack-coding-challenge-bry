@@ -52,6 +52,22 @@ Effectively, each chat will be tied to a per-browser session[conversation_id].
 
 The chat interface uses Ruby Spectre gem to interface with the OpenAI foundation model.
 
+Add the OpenAI API key to the app root directory ~/.env file
+
+or 
+
+If there's no .env file in app root directory yet, add the OpenAI API key to .env.example 
+
+```vim
+OPENAI_API_KEY=your_openai_api_key
+```
+
+Then copy .env.example to .env
+
+```bash
+cp .env.example .env
+```
+
 # Future Work
 
 - Add a new llm queue for llm sidekiq jobs and configure priority
