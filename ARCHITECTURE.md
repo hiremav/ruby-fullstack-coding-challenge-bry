@@ -2,7 +2,6 @@
 
 Web chat interface to chatGPT
 
-
 ## Application
 Visit http://0.0.0.0:3000/chats for the web chat interface to chatGPT
 
@@ -40,17 +39,6 @@ sequenceDiagram
     W->>T: Broadcast Turbo Stream update
     T-->>F: Realtime update (new AI message displayed)
 ```
-
-## Design Decisions
-
-### Decision: Session Handling Strategy
-
-A unique SecureRandom.uuid will be generated per-browser session.
-
-The SecureRandom.uuid will be stored in session[conversation_id].
-
-Effectively, each chat will be tied to a per-browser session[conversation_id].
-
 
 # Integration & External Services
 
