@@ -20,6 +20,9 @@ gem "jbuilder"
 # Enable interface with text generative OpenAI foundation model
 gem 'spectre_ai'
 
+# Enable Action cable redis pubsub adapter
+gem 'redis'
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
