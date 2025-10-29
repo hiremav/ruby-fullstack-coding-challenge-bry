@@ -19,7 +19,7 @@ class SpectreOpenaiJob
       "chat",
       target:  "messages",
       partial: "chats/chat",
-      locals:  { user_prompt: result[:content] }
+      locals:  { user_prompt: "ChatGPT-4: #{result[:content]}" }
     )
   end
 end

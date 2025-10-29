@@ -8,3 +8,11 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.message pre {
+    white-space: pre-wrap;   /* Preserve line breaks, allow wrapping */
+    word-wrap: break-word;   /* Break long words if necessary */
+    overflow-wrap: anywhere; /* Modern: break at any character if needed */
+    max-width: 100%;         /* Never exceed parent width */
+    box-sizing: border-box;  /* Include padding in width calc */
+}
