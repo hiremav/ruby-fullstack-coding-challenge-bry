@@ -65,7 +65,10 @@ cp .env.example .env
 - Add a external service object OpenAI fetcher for external API fetch (app/services/external/openai.rb)
 - Add a message broadcaster object for handling Turbo stream broadcasts (app/broadcasters/message_broadcaster.rb)
 - Add turbo partial for progress bar or loading... indicator
+- Place stylesheets in app/assets/stylesheets/pages/chat_interface.css and import files in application.css
 - Add SpectreOpenAIJob error handling
+- Add prompt validation for user input (mirror at minimum chatGPT prompt validation, excessive spam, SQL injection)
+- Add end to end message encryption
 - Add Roadauth user authentication and user table, tie chats to user sessions
 - Add chat session tab feature with new data table modeling (chat, questions, responses)
 - Add Tailwind for nice UI layout
